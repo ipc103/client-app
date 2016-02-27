@@ -7,8 +7,10 @@
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.0-rc.2/angular-resource.min.js"></script>
     <script type="text/javascript" src="js/app/app.js"></script>
     <script type="text/javascript" src="js/app/controllers/CategoriesController.js"></script>
+    <script type="text/javascript" src="js/app/services/Category.js"></script>
   </head>
   <body ng-app="app">
     <h1>Ian Recommends</h1>
@@ -16,9 +18,13 @@
       <h2>Categories</h2>
       <ul>
         <li ng-repeat="category in CategoriesCtrl.categories">
-          <a ui-sref="category({id: category.id})">{{ category.name }}</a>
+          <a ui-sref="category({id: category.id})">{{ category.name }}</a> |
+          <button ng-click="CategoriesCtrl.deleteCategory(category)">Delete Category</button>
         </li>
       </ul>
+      <label for="newCategory">Add a New Category</label>
+      <input type="text" name="newCategory" ng-model="CategoriesCtrl.newCategory.name">
+      <button class="btn btn-primary" ng-click="CategoriesCtrl.createCategory()">Create Category</button>
     </div>
     <div class="col-md-8">
         <ui-view></ui-view>

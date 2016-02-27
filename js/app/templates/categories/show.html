@@ -1,1 +1,9 @@
 <h2>{{CategoriesCtrl.category.name}}</h2>
+<ul>
+  <li ng-repeat="recommendation in CategoriesCtrl.category.recommendations">
+    <h3>{{recommendation.title}}</h3>
+    <p>
+      {{ recommendation.content }}
+    </p>
+  </li>
+</ul>
