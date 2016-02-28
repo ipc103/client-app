@@ -1,4 +1,8 @@
-<h2>{{CategoriesCtrl.category.name}}</h2>
+<h2 ng-hide="CategoriesCtrl.category.editing">{{CategoriesCtrl.category.name}}</h2>
+<input type="text" ng-model="CategoriesCtrl.category.name" ng-show="CategoriesCtrl.category.editing">
+
+<button type="button" class="btn btn-primary" ng-click="CategoriesCtrl.editCategory(CategoriesCtrl.category)" ng-hide="CategoriesCtrl.category.editing">Edit Category</button>
+<button type="button" class="btn btn-primary" ng-click="CategoriesCtrl.update(CategoriesCtrl.category)" ng-show="CategoriesCtrl.category.editing">Update Category</button>
 <ul>
   <li ng-repeat="recommendation in CategoriesCtrl.category.recommendations">
     <h3>{{recommendation.title}}</h3>

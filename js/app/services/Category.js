@@ -1,6 +1,6 @@
 var url = 'http://localhost:3000/categories'
 function Category($resource){
-  return $resource( url + '/:id')
+  return $resource( url + '/:id', null, {'update': {method: 'PATCH'}})
 }
 
 angular.module('app')
