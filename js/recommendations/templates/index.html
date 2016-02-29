@@ -1,0 +1,17 @@
+<ul>
+  <li ng-repeat="recommendation in CategoryCtrl.category.recommendations">
+    <h3>{{recommendation.title}}</h3>
+    <p>
+      {{ recommendation.content }}
+    </p>
+  </li>
+</ul>
+<p>
+  Create a new recommendation...
+  <form ng-submit="RecommendationsCtrl.addRecommendation(CategoryCtrl.category)">
+    <input type="text" ng-model="RecommendationsCtrl.recommendation.title" placeholder="title"></br>
+    <textarea name="name" ng-model="RecommendationsCtrl.recommendation.content" rows="8" cols="40" placeholder="content..."></textarea></br>
+    <input type="submit" value="Create Recommendation">
+  </form>
+
+</p>

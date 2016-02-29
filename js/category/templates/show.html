@@ -1,0 +1,6 @@
+<h2 ng-hide="CategoryCtrl.category.editing" ng-dblclick="CategoryCtrl.editCategory(CategoryCtrl.category)">{{CategoryCtrl.category.name}}</h2>
+<input type="text" ng-model="CategoryCtrl.category.name" ng-show="CategoryCtrl.category.editing">
+
+<button type="button" class="btn btn-primary" ng-click="CategoryCtrl.update(CategoryCtrl.category)" ng-show="CategoryCtrl.category.editing">Update Category</button>
+
+<ui-view></ui-view>
