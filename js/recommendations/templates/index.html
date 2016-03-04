@@ -1,6 +1,6 @@
 <ul>
   <li ng-repeat="recommendation in CategoryCtrl.category.recommendations">
-    <h3>{{recommendation.title}}</h3>
+    <h3><a ui-sref="recommendation({recommendationId: recommendation.id})">{{recommendation.title}}</a></h3>
     <p>
       {{ recommendation.content }}
     </p>

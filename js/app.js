@@ -11,4 +11,9 @@ angular.module('app', ['ui.router', 'ngResource'])
         templateUrl: 'js/recommendations/templates/index.html',
         controller: 'RecommendationsController as RecommendationsCtrl'
       })
+      .state('recommendation', {
+        url: '/recommendations/:recommendationId',
+        templateUrl: 'js/recommendations/templates/show.html',
+        controller: 'RecommendationsController as RecommendationCtrl'
+      })
   }])

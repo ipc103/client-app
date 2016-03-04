@@ -1,0 +1,13 @@
+<div class="col-md-4">
+  <h2>Categories</h2>
+  <ul>
+    <li ng-repeat="category in CategoriesCtrl.categories">
+      <a ui-sref="categories.category.recommendations({id: category.id})">{{ category.name }}</a> |
+      <button ng-click="CategoriesCtrl.deleteCategory(category)">Delete Category</button>
+    </li>
+  </ul>
+
+  <label for="newCategory">Add a New Category</label>
+  <input type="text" name="newCategory" ng-model="CategoriesCtrl.newCategory.name">
+  <button class="btn btn-primary" ng-click="CategoriesCtrl.createCategory()">Create Category</button>
+</div>
