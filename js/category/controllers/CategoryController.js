@@ -1,5 +1,6 @@
 function CategoryController($stateParams, Category){
   var self = this;
+  //show
   this.category = Category.get({id: $stateParams.id});
 
   // update
